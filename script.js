@@ -1,33 +1,25 @@
 function convertToRoman(num) {
-  	 if (num < 0 || num > 100000) {
+	if (num < 0 || num > 100000) {
         return "Input out of range";
     }
-    const romanSymbols = [
-        ['M', 1000], 
-        ['CM', 900],
-        ['D', 500], 
-        ['CD', 400], 
-        ['C', 100], 
-        ['XC', 90], 
-        ['L', 50], 
-        ['XL', 40], 
-        ['X', 10], 
-        ['IX', 9], 
-        ['V', 5], 
-        ['IV', 4], 
-        ['I', 1]
-    ];
+  	const obj = {
+      0:['M',1000], 
+      1:['D', 500], 
+      2:['C', 100], 
+      3:['L', 50], 
+      4:['X', 10], 
+      5:['V', 5], 
+      6:['I', 1]
+    };
 
-    let result = '';
+  //your code here
+	let result = '';
     
-    for (let [symbol, value] of romanSymbols) {
+    for (let [symbol, value] of obj) {
         while (num >= value) {
             result += symbol;
             num -= value;
         }
-
-  //your code here
-
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
